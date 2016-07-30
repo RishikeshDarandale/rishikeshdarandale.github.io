@@ -1,0 +1,44 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+@import "bootstrap";
+@import "variables";
+
+.navbar-custom {
+  color: $header-color;
+}
+
+.navbar-toggle {
+  margin-top: 28px;
+}
+
+.navbar-brand {
+  font-size: 22px;
+  line-height: 65px;
+  height: 100px;	
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    padding-top: 40px;
+    padding-bottom: 40px; 
+    font-size: 16px;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: $footer-color;
+}
+
