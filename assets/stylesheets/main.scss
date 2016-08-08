@@ -27,8 +27,15 @@ $navbar-inverse-brand-hover-color: $font-hovor-color;
 @import "font-awesome-sass/font-awesome";
 
 
-body { padding-top: 130px; }
+html {
+  position: relative;
+  min-height: 100%;
+}
 
+body {
+  padding-top: 130px; 
+  margin-bottom: 60px;
+}
 
 .footer {
   position: absolute;

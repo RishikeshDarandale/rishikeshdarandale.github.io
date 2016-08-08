@@ -1,0 +1,21 @@
+---
+layout: page
+title: Blog
+url: /blogs
+---
+
+<div class="row">
+  <div class="col-md-12">
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2>
+            <a class="text-primary" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endfor %}
+    </ul>
+    <p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  </div>  
+</div>
