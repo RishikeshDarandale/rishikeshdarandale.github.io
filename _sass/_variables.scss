@@ -2,7 +2,11 @@
  * Variables
  */
 
-$header-color:     #222222; 
-$footer-color:     #c0c0c3;
-$font-color:       #ffffff;
-$font-hovor-color: #337ab7
+$brand-primary:              #9b59b6;
+$brand-primary:              #337ab7;
+
+$header-color:               $brand-primary; 
+$footer-color:               #c0c0c3;
+$navbar-font-color:          #ffffff;
+$navbar-font-hovor-color:    $brand-primary;
+$navbar-font-hovor-bg-color: $footer-color;

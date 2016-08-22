@@ -11,17 +11,13 @@ $fa-font-path:        "../fonts/font-awesome";
 @import "variables";
 
 // customization
-$link-color:                       $font-color;
-$link-hover-color:                 $font-hovor-color;
-
 $navbar-height:                    100px;
-
-$navbar-inverse-bg:                $header-color;
-$navbar-inverse-link-color:        $font-color;                
-$navbar-inverse-link-hover-color:  $font-hovor-color;
-
-$navbar-inverse-brand-color:       $font-color; 
-$navbar-inverse-brand-hover-color: $font-hovor-color;
+$navbar-default-bg:                $header-color;
+$navbar-default-link-color:        $navbar-font-color;
+$navbar-default-link-hover-bg:     $navbar-font-hovor-bg-color;
+$navbar-default-link-hover-color:  $navbar-font-hovor-color;
+$navbar-default-link-active-color: $navbar-font-hovor-color;
+$navbar-default-link-active-bg:    $navbar-font-hovor-bg-color;
 
 @import "bootstrap-sass/bootstrap";
 @import "font-awesome-sass/font-awesome";
@@ -56,10 +52,9 @@ body {
   border-radius: 100%;
   font-size: 20px;
   line-height: 40px;
-  color:  $font-color;
+  color:  $navbar-font-color;
   outline: 0;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
   transition: all .3s;  
 }
-

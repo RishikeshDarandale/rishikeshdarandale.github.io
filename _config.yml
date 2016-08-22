@@ -9,6 +9,9 @@ description: > # this means to ignore newlines until "baseurl:"
   programming tools complemented by proven ability to assimilate and
   rapidly utilize emerging technologies.
 
+include:
+ - _pages  
+
   
 
      
