@@ -2,7 +2,6 @@
 layout: page
 title: Blog
 url: /blogs
-permalink: /blogs/
 ---
 
 <div class="row">
@@ -32,6 +31,15 @@ permalink: /blogs/
         <hr>
       {% endfor %}
     </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    {% include paginator.html %}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
     <p>Subscribe <a class="btn btn-primary" role="button" href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-  </div>  
+  </div>
 </div>

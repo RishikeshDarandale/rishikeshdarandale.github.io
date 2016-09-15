@@ -1,0 +1,8 @@
+{% if post.tags != '' %}
+  <p>
+    Tagged with <i class="fa fa-tags" aria-hidden="true"></i>:  
+    {% for tag in page.tags %}
+      <span class="label label-default">{{ tag }}</span>
+    {% endfor %}	
+  </p>
+{% endif %}

@@ -1,4 +1,6 @@
-<header>
+{% include base_path %}
+
+<div class="masthead">
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -12,11 +14,11 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> HOME</a></li>
-          <li><a href="/about/"><i class="fa fa-info-circle" aria-hidden="true"></i> ABOUT</a></li>
-          <li><a href="/blogs/"><i class="fa fa-rss" aria-hidden="true"></i> BLOG</a></li>
+          <li><a href="{{ base_path }}/"><i class="fa fa-home" aria-hidden="true"></i> HOME</a></li>
+          <li><a href="{{ base_path }}/about/"><i class="fa fa-info-circle" aria-hidden="true"></i> ABOUT</a></li>
+          <li><a href="{{ base_path }}/blogs/"><i class="fa fa-rss" aria-hidden="true"></i> BLOG</a></li>
         </ul>
       </div>
     </div>
   </nav>  
-</header>
+</div>
