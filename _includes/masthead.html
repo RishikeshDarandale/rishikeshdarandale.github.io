@@ -1,24 +1,38 @@
 {% include base_path %}
 
-<div class="masthead">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+<div class="mastheader mastheader--fixed-top">
+  <div class="container">
+    <div class="row visible-xs">
+      <div class="col-xs-2">
+        <button id="menu-toggle" type="button" class="mastheader__nav-button" data-target="nav-toggle">
+          <i class="fa fa-2x fa-bars mastheader__nav-button__icon-bar" aria-hidden="true"></i>
         </button>
-        <div class="navbar-brand">{{ site.title }}</div>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{ base_path }}/"><i class="fa fa-home" aria-hidden="true"></i> HOME</a></li>
-          <li><a href="{{ base_path }}/about/"><i class="fa fa-info-circle" aria-hidden="true"></i> ABOUT</a></li>
-          <li><a href="{{ base_path }}/blogs/"><i class="fa fa-rss" aria-hidden="true"></i> BLOG</a></li>
+      <div class="col-xs-10 text-center text-uppercase mastheader__brand-name">
+        {{ site.name }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="hidden-xs col-sm-5 col-md-5 col-lg-5 text-center text-uppercase mastheader__brand-name">
+        {{ site.name }}
+      </div>
+      <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+        <ul id="nav-toggle" class="mastheader__nav">
+          {% for link in site.data.navigation.main %}
+            {% assign current = nil %}
+            {% if page.url == link.url %}
+              {% assign current = 'mastheader__link--active' %}
+            {% endif %}
+            <li class="mastheader__nav__item">
+              <a class="text-uppercase mastheader__link {{ current }}" href="{{ link.url | prepend: base_path }}" 
+                {% if link.target %}target="{{ link.target }}" {% endif %}>
+                  {{ link.title }}
+                {% if link.img %}<img src="{{ link.img | prepend: base_path }}">{% endif %}
+              </a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
     </div>
-  </nav>  
+  </div> 
 </div>

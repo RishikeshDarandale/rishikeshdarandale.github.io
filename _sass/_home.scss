@@ -1,0 +1,49 @@
+.home-hero {
+  color: $color-bg;
+  padding-top: 20px;
+  margin-bottom: 80px;
+
+  &__name {
+    font-weight: 700;
+    font-size: 2em;
+
+    @include breakpoint(tab) {
+      font-size: 4.75em;
+    }
+  }
+  &__skills {
+    font-size: 1.25em;
+    font-weight: 300;
+
+    @include breakpoint(tab) {
+      font-size: 1.75em;
+    }
+  }
+}
+.about-intro {
+  background-color: $color-green;
+  margin-top: 20px;
+  margin-bottom: 80px;
+
+  &__terminal {
+    background: $color-terminal-bg;
+    color: $color-white;
+    font-size: x-large;
+    padding: 3px;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+
+    &__command-prompt {
+      color: aqua;
+    }
+  }
+
+  &__header {
+    background-color: black;
+  }
+
+  &__read-more {
+    margin: 10px 0px;
+  }
+}

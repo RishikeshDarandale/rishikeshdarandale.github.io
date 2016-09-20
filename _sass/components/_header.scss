@@ -1,0 +1,124 @@
+.mastheader {
+  height: $header-height;
+  background-color: $color-bg;
+  color: $color-white;
+  width: 100%;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  &--fixed-top {
+    position: fixed;
+    top: 0;
+    z-index: 1030;
+  }
+
+  @include breakpoint(mobile) { 
+    height: $header-xs-height;
+  }
+
+  &__nav {
+    display: block;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+
+    @include breakpoint(mobile) {
+      display: none;
+      list-style-type: disc;
+      background-color: $color-green;
+      text-align: left;
+      margin: 0px -15px;
+    }
+
+    &__item {
+      display: inline;
+
+      @include breakpoint(mobile) {
+        display: list-item;
+      }
+    }
+  }
+
+  &__link {
+    padding: 18px 20px;
+    height: 45px;
+    display: inline-block;
+    color: $color-white;
+
+    @include breakpoint(mobile) {
+      height: auto;
+      padding: 15px 20px 5px;
+    }
+
+    &:hover {
+      color: $color-green;
+      text-decoration: none;
+
+      @include breakpoint(mobile) {
+        color: $color-bg;
+      }
+
+      @include breakpoint(tab) {
+        border-bottom-style: solid;
+        border-bottom-color: $color-green;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+      }
+
+    }
+
+    &--active {
+      color: $color-green;
+
+      @include breakpoint(mobile) {
+        color: $color-bg;
+      }
+      
+      @include breakpoint(tab) {
+        border-bottom-style: solid;
+        border-bottom-color: $color-green;
+      }
+
+    }
+  }
+
+  &__nav-button {
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: $color-white;
+
+    &--toggle {
+      background-color: $color-green;
+    }
+
+    &__icon-bar {
+      color: $color-white;
+
+      &--toggle {
+        color: $color-bg;
+      }
+    }
+  }
+
+  &__brand-name {
+    padding: 15px 15px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+}
+
+/* Add margin for content below header nav */
+.content {
+  margin-top: $header-height;
+  
+  @include breakpoint(mobile) { 
+    margin-top: $header-xs-height;
+  }
+}

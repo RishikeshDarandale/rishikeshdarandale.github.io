@@ -5,29 +5,39 @@ url: /
 permalink: /
 ---
 
-<div class="container">
+<div class="container-fluid home-hero">
   <div class="row">
-    <div class="col-md-12"> 
-      <!-- normal -->
-      <div class="ih-item circle effect1 center-block">
-        <a href="#">
-          <div class="spinner"></div>
-          <div class="img"><img src="{{ site.data.bio.social.gravatar }}" alt="{{ site.title }}"></div>
-          <div class="info">
-            <div class="info-back">
-              <h3>{{ site.title }}</h3>
-              <p>Description goes here</p>
-            </div>
-          </div>
-        </a>
+    <div class="col-lg-12">
+      <div class="text-center">
+        <img class="img-circle img-responsive center-block" src="{{ site.data.bio.social.gravatar }}?s=300" alt="{{ site.title }}">
+        <div class="intro-text">
+          <span class="text-uppercase home-hero__name">{{ site.title }}</span>
+          <hr class="star">
+          <span class="home-hero__skills">{{ site.data.bio.primary-skills }}</span>
+        </div>
       </div>
-      <!-- end normal --> 
-    </div>    
+    </div>
   </div>
-  <div class="row"><div class="col-md-12"><hr></div></div>
+</div>
+<div class="container-fluid about-intro">
   <div class="row">
-    <div class="col-md-12">
-      <p class="text-center text-primary lead">{{ site.description }}</p>
+    <div class="col-lg-12">
+      <h2 class="text-uppercase text-center text-bg"><strong>About</strong></h2>
+      <hr class="star star--white">
+      <div class="about-intro__terminal">
+        <div class="text-left about-intro__header">Terminal</div>
+        <p class="about-intro__terminal__command-prompt">[~]
+          <br> 
+          rishikesh$ whoami</p>
+        <p>
+          {{ site.description }}
+        </p>
+        <p class="about-intro__terminal__command-prompt">[~]
+          <br>
+          rishikesh$
+        </p>
+      </div>
+      <p class="text-center about-intro__read-more"><a class="btn btn-inverse btn-lg" href="/about/">Read More</a></p>
     </div>
   </div>
 </div>

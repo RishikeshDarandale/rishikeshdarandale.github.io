@@ -3,13 +3,15 @@ name:
   middle-name: D.
   last-name: Darandale
 
-designation: Technologiest
+designation: Technologist
 
 email: Rishikesh.Darandale@gmail.com
 
+primary-skills: Technologist - Full Stack Developer - Java Developer
+
 social:
   # gravatar image with 300x300 px
-  gravatar: https://s.gravatar.com/avatar/5d0385085f0116785d4a9dde15acc67d?s=300
+  gravatar: https://s.gravatar.com/avatar/5d0385085f0116785d4a9dde15acc67d
   github: RishikeshDarandale
   linkedin:   in/RishikeshDarandale
   twitter:
@@ -38,7 +40,7 @@ prof-exp:
       image: sears.png
       url: https://www.searsindia.co.in/about-sears-india-home/
       location: Pune, Maharashtra, India   
-      designation: Technical Specialist / Technologiest
+      designation: Technical Specialist / Technologist
       duration: June 2010 - Present
       work-description: >
          Develop, maintain, and upgrade the existing eCommerce

@@ -1,0 +1,36 @@
+.footer {
+  background-color: $color-green-light;
+  border-top-style: solid;
+  border-top-color: $color-green;
+
+  &__nav {
+    list-style-type: none;
+    padding: 10px;
+
+    &__item {
+      display: inline;
+    }
+  }
+
+  &__social-icon {
+    background-color: $color-green;
+    color: $color-white;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 25px;
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 8px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__copyright {
+    font-size: smaller;
+    color: $color-grey-light;
+  }
+}

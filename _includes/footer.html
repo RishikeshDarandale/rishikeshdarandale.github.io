@@ -1,14 +1,21 @@
+{% include base_path %}
+
 <div class="container text-center">
-  <ul class="list-inline">
-    {% if site.data.bio.social.twitter %}<li><a class="social-buttons" href="https://twitter.com/{{ site.data.bio.social.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>{% endif %}
-    {% if site.data.bio.social.facebook %}<li><a class="social-buttons" href="https://www.facebook.com/{{ site.data.bio.social.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>{% endif %}
-    {% if site.data.bio.social.google-plus %}<li><a class="social-buttons" href="https://plus.google.com/+{{ site.data.bio.social.google-plus }}" target="_blank"><i class="fa fa-google-plus"></i></a></li>{% endif %} 
-    {% if site.data.bio.social.linkedin %}<li><a class="social-buttons" href="https://www.linkedin.com/{{ site.data.bio.social.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>{% endif %}
-    {% if site.data.bio.social.github %}<li><a class="social-buttons" href="https://github.com/{{ site.data.bio.social.github }}" target="_blank"><i class="fa fa-github"></i></a></li>{% endif %}
-    {% if site.data.bio.email %}<li><a class="social-buttons" href="mailto: {{ site.data.bio.email }}" target="_blank"><i class="fa fa-envelope"></i></a></li>{% endif %}
-    {% if site.data.bio.social.instagram %}<li><a class="social-buttons" href="https://www.instagram.com/{{ site.data.bio.social.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>{% endif %}
-    {% if site.data.bio.social.stackoverflow %}<li><a class="social-buttons" href="http://stackoverflow.com/{{ site.data.bio.social.stackoverflow }}" target="_blank"><i class="fa fa-stack-overflow"></i></a></li>{% endif %}
-  </ul>
-  <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.</div>
+  <div class="row">
+    <ul class="footer__nav">
+      <li class="footer__nav__item"><a class="social-buttons" href="{% if site.atom_feed.path %}{{ base_path }}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-rss footer__social-icon" aria-hidden="true"></i></a></li>
+      {% if site.data.bio.social.twitter %}<li class="footer__nav__item"><a class="social-buttons" href="https://twitter.com/{{ site.data.bio.social.twitter }}" target="_blank"><i class="fa fa-twitter fa-twitter--bg footer__social-icon"></i></a></li>{% endif %}
+      {% if site.data.bio.social.facebook %}<li class="footer__nav__item"><a class="social-buttons" href="https://www.facebook.com/{{ site.data.bio.social.facebook }}" target="_blank"><i class="fa fa-facebook fa-facebook--bg footer__social-icon"></i></a></li>{% endif %}
+      {% if site.data.bio.social.google-plus %}<li class="footer__nav__item"><a class="social-buttons" href="https://plus.google.com/+{{ site.data.bio.social.google-plus }}" target="_blank"><i class="fa fa-google-plus fa-google-plus--bg footer__social-icon"></i></a></li>{% endif %} 
+      {% if site.data.bio.social.linkedin %}<li class="footer__nav__item"><a class="social-buttons" href="https://www.linkedin.com/{{ site.data.bio.social.linkedin }}" target="_blank"><i class="fa fa-linkedin fa-linkedin--bg footer__social-icon"></i></a></li>{% endif %}
+      {% if site.data.bio.social.github %}<li class="footer__nav__item"><a class="social-buttons" href="https://github.com/{{ site.data.bio.social.github }}" target="_blank"><i class="fa fa-github fa-github--bg footer__social-icon"></i></a></li>{% endif %}
+      {% if site.data.bio.email %}<li class="footer__nav__item"><a class="social-buttons" href="mailto: {{ site.data.bio.email }}" target="_blank"><i class="fa fa-envelope footer__social-icon"></i></a></li>{% endif %}
+      {% if site.data.bio.social.instagram %}<li class="footer__nav__item"><a class="social-buttons" href="https://www.instagram.com/{{ site.data.bio.social.instagram }}" target="_blank"><i class="fa fa-instagram footer__social-icon"></i></a></li>{% endif %}
+      {% if site.data.bio.social.stackoverflow %}<li class="footer__nav__item"><a class="social-buttons" href="http://stackoverflow.com/{{ site.data.bio.social.stackoverflow }}" target="_blank"><i class="fa fa-stack-overflow footer__social-icon"></i></a></li>{% endif %}
+    </ul>
+  </div>
+  <div class="row">
+    <div class="footer__copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.</div>
+  </div>
 </div>
 

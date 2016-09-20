@@ -1,0 +1,11 @@
+.btn-inverse {
+  @extend .btn-default;
+  color: $color-green;
+  background-color: $color-white;
+  border-color: $color-green;
+
+  &:hover, &:focus, &:active {
+    color: $color-white;
+    background-color: $color-green;
+  }
+}
