@@ -8,8 +8,11 @@
           <i class="fa fa-2x fa-bars mastheader__nav-button__icon-bar" aria-hidden="true"></i>
         </button>
       </div>
-      <div class="col-xs-10 text-center text-uppercase mastheader__brand-name">
+      <div class="col-xs-9 text-center text-uppercase mastheader__brand-name">
         {{ site.name }}
+      </div>
+      <div class="col-xs-1 mastheader__search-icon">
+        <a class="text-white" href="/search/"><i class="fa fa-2x fa-search"></i></a>
       </div>
     </div>
     <div class="row">
@@ -31,6 +34,9 @@
               </a>
             </li>
           {% endfor %}
+          <li class="hidden-xs mastheader__nav__item">
+            <a class="text-white" href="/search/"><i class="fa fa-search"></i></a>
+          </li>
         </ul>
       </div>
     </div>

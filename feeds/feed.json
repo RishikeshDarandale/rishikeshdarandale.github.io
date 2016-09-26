@@ -1,0 +1,55 @@
+---
+---
+{% include base_path %}
+{% assign first = true %}
+
+[
+
+{% for collection in site.collections %}
+    {% for item in collection %}
+        {% for item in site.[item.label] %}
+            {% if item.title != null and item.title != empty %}
+            {% unless first %},{% endunless %}{
+                "title": {{item.title | jsonify}},
+                "content": {{item.content | markdownify | strip_html | xml_escape | strip_newlines| jsonify}},
+                "link": "{{ base_path }}{{ item.url }}",
+                "date": "{{ item.date }}",
+                "excerpt": "{{ item.snippet }}",
+                "search_omit": "{{ item.search_omit }}"
+            }
+            {% assign first = false %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+
+
+{% for post in site.posts %}
+    {% if post.title != null and post.title != empty %}
+    {% unless first %},{% endunless %}{
+        "title": {{post.title | jsonify}},
+        "content": {{post.content | markdownify | strip_html | xml_escape | strip_newlines | jsonify}},
+        "link": "{{ base_path }}{{ post.url }}",
+        "date": "{{ post.date }}",
+        "excerpt": "{{ post.snippet }}",
+        "search_omit": "{{ post.search_omit }}"
+    }
+    {% assign first = false %}
+    {% endif %}
+{% endfor %}
+
+{% for page in site.pages %}
+    {% if page.title != null and page.title != empty %}
+    {% unless first %},{% endunless %}{
+        "title": {{page.title | jsonify}},
+        "content": {{page.content | strip_html | xml_escape | strip_newlines | jsonify}},
+        "link": "{{ base_path }}{{ page.url | replace: 'index.html', '' }}",
+        "date": {{ page.date | jsonify }},
+        "excerpt": {{ page.description | jsonify }},
+        "search_omit": "{{ page.search_omit }}"
+    }
+    {% assign first = false %}
+    {% endif %}
+{% endfor %}
+
+]

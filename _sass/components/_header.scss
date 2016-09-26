@@ -108,9 +108,15 @@
 
   &__brand-name {
     padding: 15px 15px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     line-height: 20px;
+  }
+
+  &__search-icon {
+    padding: 5px 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }
 

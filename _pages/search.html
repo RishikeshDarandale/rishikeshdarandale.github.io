@@ -1,0 +1,65 @@
+---
+layout: page
+title: Search Results
+permalink: /search/
+search_omit: true
+---
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 search-header">
+      <h2 class="text-uppercase text-center text-bg"><strong>Search</strong></h2>
+      <hr class="star">
+    </div>
+  </div>
+  <div class="row"
+    <!-- Search form -->
+    <div class="searchbar text-center">
+      <form method="get" action="/search/" data-search-form>
+        <div class="searchbar__group center-block">
+          <input type="search" name="q" id="q" class="form-control input-lg searchbar__group__input" placeholder="Enter search term" data-search-input/>
+          <span class="searchbar__group__addon">
+            <button class="btn btn-lg searchbar__group__button" type="submit">
+              <i class="fa fa-lg fa-search"></i>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Search results placeholder -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <p class="search-result text-center text-bg" data-search-found>
+        <strong><span data-search-found-count></span></strong> result(s) found for &ldquo;<span data-search-found-term></span>&rdquo;.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="post-bg">
+  <div data-search-results></div>
+</div>
+
+<!-- Search result template -->
+<script type="text/x-template" id="search-result">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-lg-12">
+        <div class="post">
+          <span class="post-meta"><i class="fa fa-calendar" aria-hidden="true"></i>: ##Date##</span>
+          <h2><a class="text-green" href="##Url##">##Title##</a></h2>
+          <div>
+            <p>##Excerpt##</p>
+          </div>
+          <a href="##Url##" class="btn btn-inverse btn-lg" role="button">Read More</a>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <hr>
+</script>

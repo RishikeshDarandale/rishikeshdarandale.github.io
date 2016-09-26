@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Home
-url: /
 permalink: /
 ---
 
@@ -9,7 +8,7 @@ permalink: /
   <div class="row">
     <div class="col-lg-12">
       <div class="text-center">
-        <img class="img-circle img-responsive center-block" src="{{ site.data.bio.social.gravatar }}?s=300" alt="{{ site.title }}">
+        <img class="img-circle img-responsive center-block img-border" src="{{ site.data.bio.social.gravatar }}?s=300" alt="{{ site.title }}">
         <div class="intro-text">
           <span class="text-uppercase home-hero__name">{{ site.title }}</span>
           <hr class="star">
@@ -22,19 +21,19 @@ permalink: /
 <div class="container-fluid about-intro">
   <div class="row">
     <div class="col-lg-12">
-      <h2 class="text-uppercase text-center text-bg"><strong>About</strong></h2>
+      <h2 class="text-uppercase text-center text-white"><strong>About</strong></h2>
       <hr class="star star--white">
       <div class="about-intro__terminal">
         <div class="text-left about-intro__header">Terminal</div>
-        <p class="about-intro__terminal__command-prompt">[~]
+        <p class="text-lowercase about-intro__terminal__command-prompt">[~]
           <br> 
-          rishikesh$ whoami</p>
+          {{ site.data.bio.name.first-name }}$ whoami</p>
         <p>
           {{ site.description }}
         </p>
-        <p class="about-intro__terminal__command-prompt">[~]
+        <p class="text-lowercase  about-intro__terminal__command-prompt">[~]
           <br>
-          rishikesh$
+          {{ site.data.bio.name.first-name }}$
         </p>
       </div>
       <p class="text-center about-intro__read-more"><a class="btn btn-inverse btn-lg" href="/about/">Read More</a></p>
