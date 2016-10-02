@@ -69,9 +69,10 @@
 
 /* search bar */
 .searchbar {
-  padding: 100px 20px;
-  border-radius: 6px;
-  background: $color-green;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 
   &__group {
     padding: 3px;
@@ -93,6 +94,12 @@
       color: $color-green;
     }
   }
+}
+
+.search-container {
+  height: 250px;
+  background: $color-green;
+  position: relative;
 }
 
 .search-result {
