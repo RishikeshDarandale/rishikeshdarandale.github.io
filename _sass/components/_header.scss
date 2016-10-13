@@ -107,10 +107,15 @@
   }
 
   &__brand-name {
-    padding: 15px 15px;
-    font-size: 17px;
+    padding: 22px 15px;
+    font-size: 23px;
     font-weight: 700;
     line-height: 20px;
+
+    @include breakpoint(mobile) {
+      padding: 15px 15px;
+      font-size: 17px;
+    }
   }
 
   &__search-icon {

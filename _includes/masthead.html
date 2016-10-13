@@ -1,5 +1,24 @@
 {% include base_path %}
 
+<div class="search-bar-container js-search-bar-container">
+  <div class="search-container search-container__top-overlay-container">
+    <div class="searchbar searchbar--mobile text-center">
+      <form method="get" action="/search/">
+        <div class="searchbar__group searchbar--mobile__group center-block">
+          <input type="search" name="q" id="q" class="form-control input-lg searchbar__group__input searchbar--mobile__group__input" placeholder="Enter search term" />
+          <span class="searchbar__group__addon">
+            <button class="btn btn-lg searchbar__group__button searchbar--mobile__group__button" type="submit">
+              <i class="fa fa-lg fa-search"></i>
+            </button>
+          </span>
+        </div>
+      </form>
+      <div class="searchbar__close-button">
+        <a class="text-white js-search-bar-button" href="javascript:void(0);"><i class="fa fa-2x fa-times-circle"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="mastheader mastheader--fixed-top">
   <div class="container">
     <div class="row visible-xs">
@@ -12,7 +31,7 @@
         {{ site.name }}
       </div>
       <div class="col-xs-1 mastheader__search-icon">
-        <a class="text-white" href="/search/"><i class="fa fa-2x fa-search"></i></a>
+        <a class="text-white js-search-bar-button" href="javascript:void(0);"><i class="fa fa-2x fa-search"></i></a>
       </div>
     </div>
     <div class="row">
@@ -35,7 +54,7 @@
             </li>
           {% endfor %}
           <li class="hidden-xs mastheader__nav__item">
-            <a class="text-white" href="/search/"><i class="fa fa-search"></i></a>
+            <a class="text-white js-search-bar-button" href="javascript:void(0);"><i class="fa fa-search"></i></a>
           </li>
         </ul>
       </div>

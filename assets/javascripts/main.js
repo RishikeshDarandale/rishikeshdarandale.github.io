@@ -12,4 +12,8 @@ $(document).ready(function() {
         $(this).find(".mastheader__nav-button__icon-bar")
           .toggleClass("mastheader__nav-button__icon-bar--toggle");
     });
+    $(".js-search-bar-button").click(function() {
+        console.log("Clicked")
+        $(".js-search-bar-container").toggle();
+    });
 });
