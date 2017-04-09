@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "sdkman introduces java sdk as "
-date:   2016-08-10 11:45:04 +0530
+title:  "sdkman introduces java sdk as a new install option"
+date:   2017-04-01 12:19:04 +0530
 categories: dev-setup
 tags:
   - dev-setup
