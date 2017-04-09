@@ -7,20 +7,20 @@ designation: Technologist
 
 email: Rishikesh.Darandale@gmail.com
 
-primary-skills: Technologist - Full Stack Developer - DevOps
+primary-skills: Technologist - Full Stack Developer - Human Being
 
 social:
   # gravatar image with 300x300 px
   gravatar: https://s.gravatar.com/avatar/5d0385085f0116785d4a9dde15acc67d
   github: RishikeshDarandale
   linkedin:   in/RishikeshDarandale
-  twitter:
+  twitter: RishiDarandale
   facebook:
   google-plus: RishikeshDarandale
   instagram:
   stackoverflow:
 
-education:  
+education:
   - type: Bachelors
     name: Bachelor of Engineering in Computers
     passing-out-year: 2004
@@ -31,15 +31,15 @@ achievements:
   - Sun Certified Java Programmer
   - Sun Certified Web Component Developer
   - Pat on the back award at Tech Mahindra
-  - Applause and eXtra mile awards at Sears    
+  - Applause and eXtra mile awards at Sears
 
-## Professional experience 
-prof-exp:   
+## Professional experience
+prof-exp:
   - company-name: Sears IT Mgmt & Services Pvt. Ltd
     details:
       image: sears.png
       url: https://www.searsindia.co.in/about-sears-india-home/
-      location: Pune, Maharashtra, India   
+      location: Pune, Maharashtra, India
       designation: Technical Specialist / Technologist
       duration: June 2010 - Present
       work-description: >
@@ -57,12 +57,12 @@ prof-exp:
             Designed and developed a complete checkout flow in www.SearsPartsDirect.com to improve the end user experience and hence revenue.
         - name: Cart to Cart integration
           description: >
-            Developed the an application to add the products from child eCommerce site to parent eCommerce site(www.Sears.com) and integrated the checkout flow            
+            Developed the an application to add the products from child eCommerce site to parent eCommerce site(www.Sears.com) and integrated the checkout flow
   - company-name: Avaya India Pvt. Ltd
     details:
       image: avaya.png
       url: http://www.avaya.com/en/
-      location: Pune, Maharashtra, India   
+      location: Pune, Maharashtra, India
       designation: Software Engineer/ Management Associate
       duration: November 2007 - June 2010
       work-description: >
@@ -78,7 +78,7 @@ prof-exp:
     details:
       image: techm.png
       url: http://www.techmahindra.com/
-      location: Pune, Maharashtra, India   
+      location: Pune, Maharashtra, India
       designation: Technical Associate
       duration: January 2005 - November 2007
       work-description: >
@@ -92,7 +92,7 @@ prof-exp:
             As a part of this project ported the java based mobile games to java based mobile devices across different mobile vendors.
         - name: OTA server
           description: >
-            This was a inhouse project done to host java mobile application internally and get downloaded the java mobile devices. As developer designed and developed this web and mobile application for internal use.        
+            This was a inhouse project done to host java mobile application internally and get downloaded the java mobile devices. As developer designed and developed this web and mobile application for internal use.
 
 ## Technical Proficiencies
 skills:
@@ -101,7 +101,7 @@ skills:
       - name: java
         label: primary
       - name: javascript
-        label: success 
+        label: success
       - name: SQL
         label: success
   - type: Environements
@@ -112,6 +112,9 @@ skills:
         label: primary
       - name: windows
         label: info
+  - type: Cloud Platoform
+      - name: AWS
+        label: primary
   - type: Frameworks
     details:
       - name: struts 2.3
@@ -131,6 +134,8 @@ skills:
       - name: jQuery
         label: info
       - name: angularJS
+        label: warning
+      - name: angular
         label: warning
   - type: Application Servers
     details:
@@ -154,10 +159,10 @@ skills:
     details:
       - name: agile
         label: primary
-      - name: object oriented 
+      - name: object oriented
         label: primary
   - type: Other tools
-    details: 
+    details:
       - name: maven
         label: primary
       - name: gradle
@@ -168,5 +173,3 @@ skills:
         label: warning
       - name: jekyll
         label: primary
-
-
