@@ -18,7 +18,7 @@ You can use this theme as it is for your personal space and blog site. Follow be
 
 ## Testing it on local
 
-If you are have a technical knowledge or you are a developer, then you can setup the environment to your local as below:
+If you are a developer or have a technical knowledge, then you can setup the environment to your local system as below:
 
 * Install RVM
 ```

@@ -10,7 +10,7 @@
   <author>
     <name>{{ site.author }}</name>
   </author>
-  <rights>Copyright (c) 2016 {{ site.title }}</rights>
+  <rights>Copyright (c) 2017 {{ site.title }}</rights>
   {% for post in site.categories.blog limit:20 %}
     <entry>
       <title>{{ post.title }}</title>
