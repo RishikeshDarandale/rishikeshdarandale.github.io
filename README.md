@@ -18,29 +18,11 @@ You can use this theme as it is for your personal space and blog site. Follow be
 
 ## Testing it on local
 
-If you are a developer or have a technical knowledge, then you can setup the environment to your local system as below:
-
-* Install RVM
-```
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-\curl -sSL https://get.rvm.io | bash -s stable
-```
-
-* Install Ruby
-```
-rvm install 2.3
-rvm use 2.3
-```
-
-* Install bundler gem
-```
-gem install bundler
-```
+* Install [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/)
 
 * Go to project directory {YOUR_GITHUB_ID}.github.io
 ```
-bundle install
-bundle exec jekyll serve
+$docker-compose up
 ```
 
 ##  Credits
