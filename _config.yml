@@ -85,5 +85,5 @@ compress_html:
     envs: development
 
 # Jekyll Plugins
-gems:
+plugins:
   - jekyll-sitemap
