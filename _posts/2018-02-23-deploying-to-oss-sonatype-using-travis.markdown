@@ -71,7 +71,7 @@ while releasing the artifacts to central, there are few [basic requirements](htt
 * sign the artifacts
 * provide the correct metadata in POM file of the project
 
-A complete example pom file can be refer [here](http://central.sonatype.org/pages/requirements.html#a-complete-example-pom).
+A complete example of pom file can be referred [here](http://central.sonatype.org/pages/requirements.html#a-complete-example-pom).
 
 ### GPG keys
 
@@ -132,6 +132,13 @@ $ gpg --keyserver hkp://pgp.mit.edu --send-keys <KEY_ID>
 
 Now, lets configure our gradle build to sign and upload the artifacts to maven central.
 
+* Lets add `maven` and `singing` gradle plugin
+
+```
+apply plugin: 'maven'
+apply plugin: 'signing'
+```
+
 * Add a task for javadoc in `build.gradle`
 
 ```
@@ -173,6 +180,7 @@ signing {
 * Add upload archives task in `build.gradle`
 
 ```
+// `FOO` and `BAR` are overridden by external ones!
 def v_ossrhUsername="FOO"
 def v_ossrhPassword="BAR"
 
@@ -288,7 +296,7 @@ $travis encrypt-file my.travis.gpg
 
 > This will create an encrypted file as `my.travis.gpg.enc`.
 
-> Take a note of a line 'openssl aes-256-cbc -K...`
+> Take a note of a line `openssl aes-256-cbc -K...`
 
 * Delete the original `my.travis.gpg` file
 
