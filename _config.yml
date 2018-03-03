@@ -87,3 +87,4 @@ compress_html:
 # Jekyll Plugins
 plugins:
   - jekyll-sitemap
+  - jekyll-paginate
