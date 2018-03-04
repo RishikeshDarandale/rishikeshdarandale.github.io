@@ -1,63 +1,30 @@
 {% include base_path %}
 
-<div class="search-bar-container js-search-bar-container">
-  <div class="search-container search-container__top-overlay-container">
-    <div class="searchbar searchbar--mobile text-center">
-      <form method="get" action="/search/">
-        <div class="searchbar__group searchbar--mobile__group center-block">
-          <input type="search" name="q" id="q" class="form-control input-lg searchbar__group__input searchbar--mobile__group__input" placeholder="Enter search term" />
-          <span class="searchbar__group__addon">
-            <button class="btn btn-lg searchbar__group__button searchbar--mobile__group__button" type="submit">
-              <i class="fa fa-lg fa-search"></i>
-            </button>
-          </span>
-        </div>
-      </form>
-      <div class="searchbar__close-button">
-        <a class="text-white js-search-bar-button" href="javascript:void(0);"><i class="fa fa-2x fa-times-circle"></i></a>
-      </div>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">{{ site.name }}</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      {% for link in site.data.navigation.main %}
+        {% assign current = nil %}
+        {% if page.url == link.url %}
+          {% assign current = 'active' %}
+        {% endif %}
+        <li class="nav-item {{ current }}">
+          <a class="nav-link" href="{{ link.url | prepend: base_path }}" 
+          {% if link.target %}target="{{ link.target }}" {% endif %}>
+            {{ link.title }}
+          {% if link.img %}<img src="{{ link.img | prepend: base_path }}">{% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="/search">
+      <input class="form-control mr-sm-2" type="search" name="q" id="q" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
-</div>
-<div class="mastheader mastheader--fixed-top">
-  <div class="container">
-    <div class="row visible-xs">
-      <div class="col-xs-2">
-        <button id="menu-toggle" type="button" class="mastheader__nav-button" data-target="nav-toggle">
-          <i class="fa fa-2x fa-bars mastheader__nav-button__icon-bar" aria-hidden="true"></i>
-        </button>
-      </div>
-      <div class="col-xs-9 text-center text-uppercase mastheader__brand-name">
-        {{ site.name }}
-      </div>
-      <div class="col-xs-1 mastheader__search-icon">
-        <a class="text-white js-search-bar-button" href="javascript:void(0);"><i class="fa fa-2x fa-search"></i></a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="hidden-xs col-sm-5 col-md-5 col-lg-5 text-center text-uppercase mastheader__brand-name">
-        {{ site.name }}
-      </div>
-      <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
-        <ul id="nav-toggle" class="mastheader__nav">
-          {% for link in site.data.navigation.main %}
-            {% assign current = nil %}
-            {% if page.url == link.url %}
-              {% assign current = 'mastheader__link--active' %}
-            {% endif %}
-            <li class="mastheader__nav__item">
-              <a class="text-uppercase mastheader__link {{ current }}" href="{{ link.url | prepend: base_path }}" 
-                {% if link.target %}target="{{ link.target }}" {% endif %}>
-                  {{ link.title }}
-                {% if link.img %}<img src="{{ link.img | prepend: base_path }}">{% endif %}
-              </a>
-            </li>
-          {% endfor %}
-          <li class="hidden-xs mastheader__nav__item">
-            <a class="text-white js-search-bar-button" href="javascript:void(0);"><i class="fa fa-search"></i></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div> 
-</div>
+</nav>

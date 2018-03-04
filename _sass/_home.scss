@@ -7,7 +7,7 @@
     font-weight: 700;
     font-size: 2em;
 
-    @include breakpoint(tab) {
+    @include media-breakpoint-down(sm) {
       font-size: 4.75em;
     }
   }
@@ -15,7 +15,7 @@
     font-size: 1.25em;
     font-weight: 300;
 
-    @include breakpoint(tab) {
+    @include media-breakpoint-down(sm) {
       font-size: 1.75em;
     }
   }
