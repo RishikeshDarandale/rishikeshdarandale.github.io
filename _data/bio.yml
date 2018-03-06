@@ -96,81 +96,79 @@ prof-exp:
 
 ## Technical Proficiencies
 skills:
-  - type: Languages
-    details:
-      - name: java
-        label: primary
-      - name: javascript
-        label: success
-      - name: SQL
-        label: success
-  - type: Environements
-    details:
-      - name: java enterprise edition
-        label: primary
-      - name: linux
-        label: primary
-      - name: windows
-        label: info
-  - type: Cloud Platoform
-    details:
-      - name: AWS
-        label: primary
-  - type: Frameworks
-    details:
-      - name: struts 2.3
-        label: primary
-      - name: spring
-        label: primary
-      - name: JSF
-        label: info
-      - name: spring boot
-        label: primary
-      - name: jersey
-        label: primary
-      - name: dropwizard
-        label: warning
-      - name: twitter bootstrap
-        label: info
-      - name: jQuery
-        label: info
-      - name: angularJS
-        label: warning
-      - name: angular
-        label: warning
-  - type: Application Servers
-    details:
-      - name: jboss 4.3, 7.1.1
-        label: primary
-      - name: wildfly 8.x
-        label: primary
-      - name: tomcat
-        label: primary
-  - type: Versioning Tools
-    details:
-      - name: git
-        label: primary
-      - name: svn
-        label: primary
-  - type: CI tools
-    details:
-      - name: jenkins
-        label: primary
-  - type: Development
-    details:
-      - name: agile
-        label: primary
-      - name: object oriented
-        label: primary
-  - type: Other tools
-    details:
-      - name: maven
-        label: primary
-      - name: gradle
-        label: primary
-      - name: docker
-        label: primary
-      - name: ansible
-        label: warning
-      - name: jekyll
-        label: primary
+  - name: java
+    weight: 20
+  - name: javascript
+    weight: 12
+  - name: spring
+    weight: 14
+  - name: jersey
+    weight: 13
+  - name: dropwizard
+    weight: 8
+  - name: struts
+    weight: 14
+  - name: spring-boot
+    weight: 13
+  - name: agile
+    weight: 15
+  - name: rest
+    weight: 13
+  - name: graphql
+    weight: 9
+  - name: docker
+    weight: 10
+  - name: nodejs
+    weight: 7
+  - name: html5
+    weight: 10
+  - name: css
+    weight: 6
+  - name: sass/scss
+    weight: 8
+  - name: jekyll
+    weight: 12
+  - name: git
+    weight: 11
+  - name: CI/CD
+    weight: 11
+  - name: maven
+    weight: 13
+  - name: gradle
+    weight: 9
+  - name: sql
+    weight: 11
+  - name: aws
+    weight: 12
+  - name: angular
+    weight: 5
+  - name: bash
+    weight: 10
+  - name: bootstrap
+    weight: 12
+  - name: apache
+    weight: 8
+  - name: tomcat
+    weight: 9
+  - name: solr
+    weight: 10
+  - name: elasticsearch
+    weight: 9
+  - name: terraform
+    weight: 8
+  - name: mockito
+    weight: 9
+  - name: sdkman
+    weight: 12
+  - name: npm
+    weight: 9
+  - name: github
+    weight: 10
+  - name: jpa
+    weight: 12
+  - name: hibernate
+    weight: 9
+  - name: mysql
+    weight: 9
+  
+    
