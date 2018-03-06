@@ -28,13 +28,13 @@ So, I have integrated the lunr.js with [simple jekyll search][simple-search-code
 
 * Add lunr.js [library][lunr-library] to your jekyll site and include it in your project.
 
-{% highlight html %}
+```html
   <script src="/assets/javascripts/vendor/lunr.min.js"></script>
   <script src="/assets/javascripts/search.js"></script>
-{% endhighlight %}
+```
 
 * For the first time / if the sessionStorage does not have the index data, then store the actual data and the index in sessionStorage with configuration as below:
-{% highlight javascript %}
+```javascript
 /**
  * Initiate search functionality.
  * Shows results based on querystring if present.
@@ -60,10 +60,10 @@ function initSearch() {
     execSearch(q);
 });
 }
-{% endhighlight %}
+```
 
 * The actual ```getData``` function looks like below
-{% highlight javascript %}
+```javascript
 /**
  * Get the JSON data
  * Get the generated feeds/feed.json file so lunr.js can search it locally.
@@ -104,10 +104,10 @@ function getData() {
       console.log("finally...");
     });
 }
-{% endhighlight %}
+```
 
 * The ```search``` function will look like below:
-{% highlight javascript %}
+```javascript
 /**
  * Get the search result from lunr
  * @param {String} q
@@ -118,7 +118,7 @@ function getResults(q) {
   console.log("Indexed var from sessionStorage: " + savedIndexData);
   return lunr.Index.load(savedIndexData).search(q);
 }
-{% endhighlight %}
+```
 
 Morever, you can refer my new [modified code][lunr-search-code] repository for search and see it live in action on my personal [github page][gh-page].
 

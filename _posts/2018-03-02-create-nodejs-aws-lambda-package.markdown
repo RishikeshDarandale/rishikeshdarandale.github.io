@@ -14,7 +14,7 @@ read_time: true
 
 Creating a node.js package for AWS lambda is described [here](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-create-deployment-pkg.html) in detail. Basically, we have to bundle our javascript code and dependent node modules from `node_mdules/` directory. In simple scenario, it would be as simple as following command:
 
-```
+```bash
 $zip package.zip index.js node_modules 
 ```
 
@@ -22,7 +22,7 @@ The above command will create a package with the project code with index.js and 
 
 Consider, following `package.json` file
 
-```
+```json
 {
   "name": "lambda-nodejs-package",
   "version": "1.0.0",
@@ -54,7 +54,7 @@ This project has `dev-dependencies` and probably we do not want to include these
 
 Few days later I came across a good article about using [npm as build tool](https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/). This gave me an idea to see If I can make use of `npm ls --production`, thus I finally come up with following command to create a nodejs package using unix commands.
 
-```
+```text
  "build": "zip -r $npm_package_name-$npm_package_version.zip package.json README.md index.js `npm ls --production --parseable | grep node_modules | sed -r -e 's/(.*)$npm_package_name\\///g'`"
 ```
 
@@ -64,7 +64,7 @@ This command will create a zip package with name `name-version.zip` with content
 
 Final `package.json` will be:
 
-```
+```json
 {
   "name": "lambda-nodejs-package",
   "version": "1.0.0",
@@ -99,7 +99,7 @@ Final `package.json` will be:
 
 The following `npm` command will create the package:
 
-```
+```bash
 $npm run build
 ```
 

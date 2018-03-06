@@ -18,32 +18,34 @@ The steps mentioned in my previous [post] for setting up java SDK becomes absolu
 
 It super easy with following command:
 
-```$curl -s "https://get.sdkman.io" | bash```
+```bash
+$curl -s "https://get.sdkman.io" | bash
+```
 
 Following is quick reference to setup [java SE sdk][java-se-sdk]
 
 To get a listing of Candidate Versions
 
-```
+```bash
 $sdk list java
 ```
 
 Install the specific version of the software
 
-```
+```bash
 $sdk install java 8u121
 $sdk install java 7u80
 ```
 
 Choose to use a given version in the current terminal
 
-```
+```bash
 $sdk use java 7u80
 ```
 
 Chose to make a given version the default:
 
-```
+```bash
 $sdk deafult java 8u121
 ```
 

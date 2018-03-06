@@ -66,6 +66,28 @@ keep_files:
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
+# Conversion
+markdown: kramdown
+# Use prismjs instead of rouge
+# https://mycyberuniverse.com/web/relpace-rouge-highlighter-prismjs-jekyll.html
+highlighter: none
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
 # Sass/SCSS
 sass:
   sass_dir: _sass
@@ -85,6 +107,18 @@ compress_html:
     envs: development
 
 # Jekyll Plugins
+# Plugins (previously gems:)
 plugins:
-  - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji

@@ -28,30 +28,32 @@ Prior using [sdkman], I was using the same setup as [java SE sdk] for other sdk 
 
 It super easy with following command:
 
-```$curl -s "https://get.sdkman.io" | bash```
+```bash
+$curl -s "https://get.sdkman.io" | bash
+```
 
 Following is quick reference to setup [gradle]:
 
 To get a listing of Candidate Versions
 
-```
+```bash
 $sdk list gradle
 ```
 
 Install the specific version of the software
 
-```
+```bash
 $sdk install gradle 2.14
 ```
 Choose to use a given version in the current terminal
 
-```
+```bash
 $sdk use gradle 2.14
 ```
 
 Chose to make a given version the default:
 
-```
+```bash
 $sdk deafult gradle 2.14
 ```
 

@@ -21,7 +21,7 @@ First of all, lets start with how we want to maintain the version of the project
 
 * Create a `gradle.properties` file in your root project directory and add following:
 
-```
+```text
 group=<YOUR_GROUP_ID>
 archivesBaseName=<YOUR_ARTIFACT_ID>
 version=1.0.0-SNAPSHOT
@@ -29,7 +29,7 @@ version=1.0.0-SNAPSHOT
 
 * Add below mentioned code in your `build.gradle` file:
 
-```
+```grrovy
 // add the build script
 buildscript {
   repositories {
@@ -47,7 +47,7 @@ apply plugin: 'net.researchgate.release'
 ```
 
 Once above setup is done, then you can create a release of your project using following command:
-```
+```bash
 $./gradlew release
 ```
 
@@ -55,7 +55,7 @@ $./gradlew release
 
 > If you want not to prompt of version on command line, then you need to pass `release.useAutomaticVersion`, `release.releaseVersion` and `release.newVersion`.
 
-```
+```bash
 $ gradle release -Prelease.useAutomaticVersion=true -Prelease.releaseVersion=1.0.0 -Prelease.newVersion=1.0.1-SNAPSHOT
 ```
 
@@ -79,7 +79,7 @@ As we learnt above that we need to sign the artifacts before pushing it to maven
 
 * Verify the installation of `gpg`
 
-```
+```bash
 $gpg --version
 gpg (GnuPG) 2.1.15
 libgcrypt 1.7.8
@@ -90,7 +90,7 @@ $
 
 * Create the key
 
-```
+```bash
 $gpg --gen-key
 
 ```
@@ -99,7 +99,7 @@ $gpg --gen-key
 
 * List the public keys
 
-```
+```bash
 $ gpg --list-keys --keyid-format short
 /home/<USER>/.gnupg/pubring.kbx
 ...
@@ -108,13 +108,13 @@ $ gpg --list-keys --keyid-format short
 
 * List the secret keys
 
-```
+```bash
 $ gpg --list-secret-keys --keyid-format short
 ```
 
 * Export the keys as gradle-signing plugin can not read .kbx format
 
-```
+```bash
 $ gpg --export-secret-key <KEY_ID> > ~/.gnupg/pubring.gpg
 ```
 
@@ -124,7 +124,7 @@ Hmmm! Now you have private/public key pair. Lets publish your public key to the 
 
 * Publish your public key
 
-```
+```bash
 $ gpg --keyserver hkp://pgp.mit.edu --send-keys <KEY_ID>
 ```
 
@@ -134,14 +134,14 @@ Now, lets configure our gradle build to sign and upload the artifacts to maven c
 
 * Lets add `maven` and `singing` gradle plugin
 
-```
+```groovy
 apply plugin: 'maven'
 apply plugin: 'signing'
 ```
 
 * Add a task for javadoc in `build.gradle`
 
-```
+```groovy
 // Create a jar with javadoc
 task javadocJar(type: Jar) {
   classifier = 'javadoc'
@@ -151,7 +151,7 @@ task javadocJar(type: Jar) {
 
 * Add a task for sources in `build.gradle`
 
-```
+```groovy
 // Create a jar with soruces
 task sourcesJar(type: Jar) {
   classifier = 'sources'
@@ -161,7 +161,7 @@ task sourcesJar(type: Jar) {
 
 * Hook the javadoc and sources task unser archive
 
-```
+```groovy
 // hook all the artifacts under artifacts task
 artifacts {
   archives javadocJar, sourcesJar
@@ -170,7 +170,7 @@ artifacts {
 
 * Add a signing task in `build.gradle`
 
-```
+```groovy
 // Signing task
 signing {
   sign configurations.archives
@@ -179,7 +179,7 @@ signing {
 
 * Add upload archives task in `build.gradle`
 
-```
+```groovy
 // `FOO` and `BAR` are overridden by external ones!
 def v_ossrhUsername="FOO"
 def v_ossrhPassword="BAR"
@@ -241,7 +241,7 @@ uploadArchives {
 
 * Lets add the JIRA username/password and signing information to your `~/.gradle/gradle.properties`
 
-```
+```text
 signing.keyId=YourKeyId
 signing.password=YourPublicKeyPassword
 signing.secretKeyRingFile=PathToYourKeyRingFile
@@ -252,7 +252,7 @@ ossrhPassword=your-jira-password
 
 * Lets first try pushing SNAPSHOT version from master branch
 
-```
+```bash
 $gradle uploadArchives
 ```
 
@@ -266,7 +266,7 @@ Most likely you might be using [travis](travis-ci.org) or some other CI for CI p
 * Publish GPG Key
 * Install [travis gem](https://github.com/travis-ci/travis.rb) to uBuntu
 
-```
+```bash
 $sudo gem install travis
 ```
 
@@ -275,22 +275,22 @@ $sudo gem install travis
 * Create `.travis.yml` file in your root directory of project
 * Encrypt the parameters for [travis](travis-ci.org) build. Execute below commands from the root directory of your project.
 
-```
-travis encrypt SONATYPE_USERNAME="<YOUR_JIRA_USER_NAME>" --add
-travis encrypt SONATYPE_PASSWORD="<YOUR_JIRA_PASSWORD>" --add
-travis encrypt GPG_KEY_ID="<TRAVIS_GPG_KEY_ID>" --add
-travis encrypt GPG_KEY_PASSPHRASE="<TRAVIS_KEY_PASSPHRASE>" --add
+```bash
+$travis encrypt SONATYPE_USERNAME="<YOUR_JIRA_USER_NAME>" --add
+$travis encrypt SONATYPE_PASSWORD="<YOUR_JIRA_PASSWORD>" --add
+$travis encrypt GPG_KEY_ID="<TRAVIS_GPG_KEY_ID>" --add
+$travis encrypt GPG_KEY_PASSPHRASE="<TRAVIS_KEY_PASSPHRASE>" --add
 ```
 
 * Export the secrect/private GPG key to `my.travis.gpg` into your root directoy of project
 
-```
+```bash
 $gpg --export-secret-key <TRAVIS_KEY_ID> > my.travis.gpg
 ```
 
 * Encrypt private key gpg file with travis
 
-```
+```bash
 $travis encrypt-file my.travis.gpg
 ```
 
@@ -300,13 +300,13 @@ $travis encrypt-file my.travis.gpg
 
 * Delete the original `my.travis.gpg` file
 
-```
+```bash
 $shred --remove my.travis.gpg
 ```
 
 * Create a deploy script as below:
 
-```
+```bash
 #!/usr/bin/env bash
 if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
   openssl aes-256-cbc -K 
@@ -321,7 +321,7 @@ fi
 
 * Finally, modify your `.travis.yml` as below:
 
-```
+```yaml
 language: java
 jdk:
   - oraclejdk8
@@ -346,7 +346,7 @@ Lets integrate your gradle release with upload to maven central.
 
 * Add the below task to `build.gradle`
 
-```
+```groovy
 /*
  * For each release, push the released artifacts to OSS sonatype
  */
@@ -355,7 +355,7 @@ afterReleaseBuild.dependsOn uploadArchives
 
 * To create release
 
-```
+```bash
 $gradle release
 ```
 
