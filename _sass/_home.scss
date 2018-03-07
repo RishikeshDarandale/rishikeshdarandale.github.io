@@ -8,7 +8,7 @@
     font-size: 2em;
 
     @include media-breakpoint-down(sm) {
-      font-size: 4.75em;
+      font-size: 1.75em;
     }
   }
   &__skills {
@@ -16,7 +16,7 @@
     font-weight: 300;
 
     @include media-breakpoint-down(sm) {
-      font-size: 1.75em;
+      font-size: 1em;
     }
   }
 }
