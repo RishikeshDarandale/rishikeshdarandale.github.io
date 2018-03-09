@@ -34,6 +34,7 @@ So, I have integrated the lunr.js with [simple jekyll search][simple-search-code
 ```
 
 * For the first time / if the sessionStorage does not have the index data, then store the actual data and the index in sessionStorage with configuration as below:
+
 ```javascript
 /**
  * Initiate search functionality.
@@ -62,7 +63,8 @@ function initSearch() {
 }
 ```
 
-* The actual ```getData``` function looks like below
+* The actual `getData` function looks like below
+
 ```javascript
 /**
  * Get the JSON data
@@ -106,7 +108,8 @@ function getData() {
 }
 ```
 
-* The ```search``` function will look like below:
+* The `search` function will look like below:
+
 ```javascript
 /**
  * Get the search result from lunr

@@ -70,7 +70,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 markdown: kramdown
 # Use prismjs instead of rouge
 # https://mycyberuniverse.com/web/relpace-rouge-highlighter-prismjs-jekyll.html
-highlighter: none
+highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
