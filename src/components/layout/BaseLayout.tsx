@@ -50,7 +50,7 @@ const BaseLayout: FunctionComponent<BaseLayoutProps> = (props: BaseLayoutProps) 
           },
           {
             title: "Follow on stackoverflow",
-            href: "http://stackoverflow.com/users/8101556/rishikesh-darandale",
+            href: "https://stackoverflow.com/users/8101556/rishikesh-darandale",
             name: "stackoverflow",
           },
           {

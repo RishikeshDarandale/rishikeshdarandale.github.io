@@ -1,4 +1,7 @@
 import { Icon } from 'reflexjs';
+import Link from 'next/link';
+
+import BIO from '../assets/data/bio.yml';
 
 export default function Home(): JSX.Element {
   return (
@@ -18,37 +21,60 @@ export default function Home(): JSX.Element {
               variant="heading.h1"
               fontWeight="bolder" 
               lineHeight="tight">
-              Rishikesh Darandale
+              {BIO.name}
             </h1>
             <div
               display="flex"
               alignItems="center"
               justifyContent="center"
-              size="80"
+              size="64|80"
               rounded="full"
               mb="4"
               mx="auto"
               bg="secondary"
+              pt="2"
             >
-              <img 
-                rounded="full"
-                src="https://s.gravatar.com/avatar/5d0385085f0116785d4a9dde15acc67d?s=300"
-                alt="Rishikesh Darandale"/>
+              <picture>
+                <source srcSet={BIO.social.gravatar + '?s=300'} media="(min-width: 640px)" />
+                <img rounded="full" srcSet={BIO.social.gravatar + '?s=250'} alt={BIO.name} height="auto"/>
+              </picture>
             </div>
-            <p variant="text.lead" mt="2" borderBottomWidth={1}>
-              Full Stack Developer | Technical Architect | Quick Learner
+            <p variant="text.lead" mt={2} pb={2} borderBottomWidth={1}>
+            {BIO.bio}
             </p>
-            <p mt="8" >
-              I am full stack developer with more than 15 years of development experience. I am passinate about code hygine, design, user interface and security. Currently I am focusing and learning more about the serverless world. 
-            </p>
-            <div display="flex" justifyContent="center" gap="4" mt="6">
-              <a variant="button.primary.lg" href="#">
+          </div>
+          <div
+            display="grid"
+            gridAutoFlow="dense"
+            col="1|1|2"
+            gap="8|8|12"
+            mt={8}>
+            <div >
+              <h3>Introduction</h3>
+              {BIO.aboutMe.split('\n\n').map((p, index) => {
+                return (
+                  <p mb={3} key={index}>{p}</p>
+                )
+              })}
+            </div>
+            <div>
+              <h3>Highlights</h3>
+              <ul listStyle="disc" paddingInlineStart={4}>
+              {BIO.highlights.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+              </ul>
+            </div>
+          </div>
+          <div display="flex" justifyContent="center" gap="4" mt="6">
+            <Link passHref href="/about">
+              <a variant="button.primary.lg">
                 About <Icon name="arrow-right" ml="2" size="4" />
               </a>
-              <a variant="button.outlineSecondary.lg" href="#">
-                Projects
-              </a>
-            </div>
+            </Link>            
+            <a variant="button.outlineSecondary.lg" href="#">
+              Projects
+            </a>
           </div>
         </div>
       </section>

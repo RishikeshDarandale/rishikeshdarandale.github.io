@@ -106,9 +106,9 @@ export const NavLinks: FunctionComponent<NavLinkProps> = ({links, ...props}) => 
   ) : null;
 }
 
-interface MOdeToggleProps extends React.HTMLAttributes<HTMLButtonElement> {};
+interface ModeToggleProps extends React.HTMLAttributes<HTMLButtonElement> {};
 
-export const ModeToggle :FunctionComponent<MOdeToggleProps> = ({...props}) => { 
+export const ModeToggle :FunctionComponent<ModeToggleProps> = ({...props}) => { 
   const [colorMode, setColorMode] = useColorMode();
   return (
     <button

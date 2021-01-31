@@ -6,6 +6,8 @@ import theme from '../theme/default';
 
 import BaseLayout from '../components/layout/BaseLayout';
 
+import BIO from '../assets/data/bio.yml';
+
 // @Read: https://nextjs.org/docs/advanced-features/custom-app
 export default function MyPersonalSpace({
   Component,
@@ -14,7 +16,7 @@ export default function MyPersonalSpace({
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>My Personal Space</title>
+        <title>{BIO.name}</title>
         <meta
           name="viewport"
           content='"width=device-width,height=device-height"'
